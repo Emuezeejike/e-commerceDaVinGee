@@ -5,9 +5,10 @@ import Home from './Pages/Homepage/Home'
 import Cart from './Pages/CartPage/Cart'
 import ProductDetail from './Pages/ProductDetailsPage/ProductDetail'
 import NotFoundPage from './Components/NotFoundPage'
-import NavBar from './Components/NavBar'
 import Products from './Pages/ShopPage/Products'
-import Footer from './Components/Footer'
+import Layout from './routes/Layout'
+import Contact from './Pages/ContactPage/Contact'
+
 
 
 function App() {
@@ -40,19 +41,17 @@ function App() {
 };
 
   return (
-    <>
-      <div>
-        <NavBar />  
-        <Routes>
-          <Route path="/" element={<Home />} />
-          <Route path="/cart" element={<Cart cartItems={cart}/>} />
-          <Route path="/products" element={<Products onAddToCart={handleAddToCart} />} />
-          <Route path="/productdetail/:id" element={<ProductDetail />} />
-          <Route path="*" element={<NotFoundPage />} />     
-        </Routes>
-        <Footer />
-      </div>
-      
+    <> 
+      <Routes>
+        <Route path="/" element={<Layout />}>
+          <Route index element={<Home />} />
+          <Route path="cart" element={<Cart cartItems={cart}/>} />
+          <Route path="products" element={<Products onAddToCart={handleAddToCart} />} />
+          <Route path="productdetail/:id" element={<ProductDetail />} />
+          <Route path="*" element={<NotFoundPage />} />
+          <Route path="contact" element={<Contact />} />
+        </Route>   
+      </Routes>      
     </>
   );
 }

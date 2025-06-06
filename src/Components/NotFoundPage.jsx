@@ -1,6 +1,7 @@
 import React from 'react'
 import { Link } from 'react-router-dom'
-import notFoundImage from '../assets/images/pg.png'; // Adjust the path as necessary
+import notFoundImage from '../assets/images/pg.png';
+
 
 const NotFoundPage = () => {
   return (

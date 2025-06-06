@@ -1,6 +1,5 @@
 import React from 'react'
 import { useParams } from 'react-router-dom'
-import NavBar from '../../Components/NavBar'
 import allProducts from '../../data/allProducts';
 
 
@@ -11,7 +10,6 @@ const ProductDetail = () => {
   if (!product) {
     return (
       <div>
-        <NavBar />
         <h1>Product not found</h1>
       </div>
     );
@@ -19,7 +17,6 @@ const ProductDetail = () => {
 
   return (
     <div>
-      <NavBar />
       <div className="max-w-xl mx-auto mt-8 p-4 bg-white shadow rounded">
         <img src={product.img} alt={product.name} className="w-full h-64 object-cover rounded mb-4" />
         <h1 className="text-2xl font-bold mb-2">{product.name}</h1>

@@ -1,5 +1,4 @@
 import React from 'react'
-import NavBar from '../../Components/NavBar'
 import '../../Components/ImageBg.css'
 import { Link } from 'react-router-dom';
 
@@ -13,7 +12,6 @@ const Cart = ({ cartItems =[] }) => {
   );
   return (
     <div>
-      <NavBar />
       <div className='imageBg h-[20%] flex flex-col justify-center items-center text-white'>
         <h1 className='font-bold text-3xl text-center text-black'>Cart</h1>
         <div className='flex gap-2 mt-4 text-sm'>
@@ -24,8 +22,9 @@ const Cart = ({ cartItems =[] }) => {
           <span className="text-sm ">Cart</span>
         </div>
       </div>
-      <div>
-      <ul>
+      <div className='w-[50%] m-auto p-8 family-poppins'>
+      <h1 className='text-center font-bold mt-4 text-2xl family-poppins'>Your Items</h1>
+      <ul className=''>
         {cartItems.length === 0 ? (
       <li>No items in cart.</li>
       ) : (
@@ -34,9 +33,9 @@ const Cart = ({ cartItems =[] }) => {
         {item.name} - {item.price} x {item.quantity}
       </li>
       ))
-    )}
-</ul>
-      <p>Total Price: #{totalPrice}</p>
+      )}
+      </ul>
+      <p className='font-bold text-2xl'>Total Price: #{totalPrice}</p>
     </div>
     </div>
   )

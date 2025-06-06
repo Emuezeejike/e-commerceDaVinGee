@@ -6,7 +6,7 @@ import '../../Components/ImageBg.css'
 
 
 
-const ProductPerPage = 4;
+const ProductPerPage = 8;
 
 const Products = ({ onAddToCart }) => {
   const [visibleCount, setVisibleCount] = useState(ProductPerPage);
@@ -31,12 +31,11 @@ const Products = ({ onAddToCart }) => {
             className='bg-gray-200 shadow-lg transition-transform duration-200 hover:scale-105 hover:shadow-2xl relative group overflow-hidden'
             key={product.id}
           >
-            {/* Add to Cart button overlay */}
             <button
               className="absolute top-8 left-1/2 -translate-x-1/2 z-10 opacity-0 group-hover:opacity-100 transition-opacity duration-200 bg-orange-300 text-black text-sm font-bold px-4 py-2 rounded shadow-lg hover:cursor-pointer  hover:bg-orange-500"
               onClick={() => {console.log('Button clicked', product);
               onAddToCart && onAddToCart({...product, quantity: 1})}}
-              style={{ pointerEvents: 'auto' }} // Ensure button is clickable
+              style={{ pointerEvents: 'auto' }} 
             >
               Add to Cart
             </button>
@@ -51,7 +50,7 @@ const Products = ({ onAddToCart }) => {
                 className='w-full h-fit object-cover transition duration-200 group-hover:blur-[2px]'
               />
             </div>
-            <div className="m-0 p-2 transition duration-200 group-hover:blur-[2px]">
+            <div className="p-2 transition duration-200 group-hover:blur-[2px]">
               <h3 className='family-poppins font-bold'>{product.name}</h3>
               <p>{product.desc}</p>
               <p className='family-poppins font-bold'>

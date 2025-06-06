@@ -16,17 +16,17 @@ const Footer = () => {
       <div className='flex flex-col gap-4'>
         <h1 className='opacity-50 family-poppins'>Links</h1>
         <ul className='flex flex-col gap-2 family-poppins '>
-          <li><Link to={'/'} >Home</Link></li>
-          <li><Link to={'/shop'} >Shop</Link></li>
-          <li><Link to={'/contact'} >Contact</Link></li>
+          <li><Link className='hover:text-amber-500' to={'/'} >Home</Link></li>
+          <li><Link className='hover:text-amber-500' to={'/shop'} >Shop</Link></li>
+          <li><Link className='hover:text-amber-500' to={'/contact'} >Contact</Link></li>
         </ul>
       </div>
       <div className='flex flex-col gap-4'>
         <h1 className='opacity-50 family-poppins'>Newsletter</h1>
         <div className='flex gap-2'>
           <label htmlFor="email"></label>
-          <input className='border-b-4 border-black' type="text" placeholder='Enter Your Email Address' />
-          <button>Subscribe</button>
+          <input className='border-b-2 border-black' type="text" placeholder='Enter Your Email Address' />
+          <button className='bg-orange-300 p-2 text-sm rounded-sm font-bold hover:bg-amber-500'>Subscribe</button>
         </div>       
       </div>
       

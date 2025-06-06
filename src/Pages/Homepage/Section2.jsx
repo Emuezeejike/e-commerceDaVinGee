@@ -7,8 +7,8 @@ const Section2 = () => {
   return (
     <div>
         <h2 className='text-black text-center font-bold text-2xl pt-3'>Browse The Range</h2>
-        <p className='text-black text-center'>Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
-        <div className='flex md:flex-row justify-between text-center w-[60%] m-auto items-center text-black gap-4 p-8 family-poppins'>
+        <p className='text-black text-center'>Check out our exclusive shoe catalogue made from the finest of materials <br /> that gives your feet the comfort it needs to step into the world</p>
+        <div className='flex md:flex-row justify-between text-center w-[90%] m-auto items-center text-black gap-4 p-8 family-poppins'>
             <div>
                 <img className='rounded-lg' src={image1} alt='men' />
                 <h3 className='family-poppins font-bold '>Men Wears</h3>
