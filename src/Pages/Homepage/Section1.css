@@ -1,0 +1,6 @@
+.backgroundImage {
+    background-image: url(../../assets/images/bg6.png);
+    background-size: cover;
+    background-position: center;
+    height: 60vh;
+}
