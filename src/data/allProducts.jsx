@@ -55,7 +55,7 @@ const allProducts = [
   {
     id: 4,
     img: image4,
-    name: "Mama's Kid",
+    name: "Mamason",
     desc: 'For Toddlers',
     price: 67000,
     oldPrice: '#78000',
@@ -109,7 +109,7 @@ const allProducts = [
   {
     id: 10,
     img: image10,
-    name: 'Lady In Red',
+    name: 'LadyRed',
     desc: 'Dinner made easy',
     price: 55000,
     oldPrice: '#75,000',
@@ -199,7 +199,7 @@ const allProducts = [
   {
     id: 20,
     img: image19,
-    name: "Mama's Kid",
+    name: "Mamason",
     desc: 'For Toddlers',
     price: 40000,
     oldPrice: '#70,000',

@@ -40,17 +40,21 @@ function App() {
 });
 };
 
+  const handleDeleteFromCart = (id) => {
+  setCart((prev) => prev.filter(item => item.id !== id));
+};
+
   return (
     <> 
       <Routes>
         <Route path="/" element={<Layout />}>
           <Route index element={<Home />} />
-          <Route path="cart" element={<Cart cartItems={cart}/>} />
+          <Route path="cart" element={<Cart cartItems={cart} onDelete={handleDeleteFromCart} />} />
           <Route path="products" element={<Products onAddToCart={handleAddToCart} />} />
           <Route path="productdetail/:id" element={<ProductDetail />} />
           <Route path="*" element={<NotFoundPage />} />
           <Route path="contact" element={<Contact />} />
-          <Route path="checkout" element={<CheckOut />} />
+          <Route path="checkout" element={<CheckOut cartItems={cart} />} />
         </Route>   
       </Routes>      
     </>
