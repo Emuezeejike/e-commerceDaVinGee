@@ -8,6 +8,7 @@ import NotFoundPage from './Components/NotFoundPage'
 import Products from './Pages/ShopPage/Products'
 import Layout from './routes/Layout'
 import Contact from './Pages/ContactPage/Contact'
+import CheckOut from './Pages/CheckoutPage/CheckOut'
 
 
 
@@ -21,12 +22,11 @@ function App() {
 
   // Save cart to localStorage whenever it changes
   useEffect(() => {
-    console.log('Cart state:', cart);
+    
     localStorage.setItem('cart', JSON.stringify(cart));
   }, [cart]);
 
   const handleAddToCart = (product) => {
-    console.log('Adding to cart:', product);
   setCart((prev) => {
   const found = prev.find((item) => item.id === product.id);
   if (found) {
@@ -50,6 +50,7 @@ function App() {
           <Route path="productdetail/:id" element={<ProductDetail />} />
           <Route path="*" element={<NotFoundPage />} />
           <Route path="contact" element={<Contact />} />
+          <Route path="checkout" element={<CheckOut />} />
         </Route>   
       </Routes>      
     </>

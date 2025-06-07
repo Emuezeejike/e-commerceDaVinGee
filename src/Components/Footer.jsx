@@ -25,7 +25,7 @@ const Footer = () => {
         <h1 className='opacity-50 family-poppins'>Newsletter</h1>
         <div className='flex gap-2'>
           <label htmlFor="email"></label>
-          <input className='border-b-2 border-black' type="text" placeholder='Enter Your Email Address' />
+          <input className='border-b-2 border-black focus:outline-none focus:border-black transition duration-200' type="text" placeholder='Enter Your Email Address' />
           <button className='bg-orange-300 p-2 text-sm rounded-sm font-bold hover:bg-amber-500'>Subscribe</button>
         </div>       
       </div>
