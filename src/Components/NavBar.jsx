@@ -2,6 +2,10 @@ import React, { useState } from 'react'
 import { Link, useNavigate } from 'react-router-dom'
 import cart from '../assets/images/cart.svg'
 import searchImage from '../assets/images/search.svg'
+import HomeIcon from '../assets/images/home.svg'
+import ContactIcon from '../assets/images/contact.svg'
+import StoreIcon from '../assets/images/store.svg'
+import '../../src/index.css';
 
 const NavBar = ({cartCount}) => {
   const [search, setSearch] = useState('');
@@ -15,10 +19,10 @@ const NavBar = ({cartCount}) => {
   };
 
   return (
-    <div className='w-full bg-gray-400 shadow-md'>
-      <nav className="bg-gray-300 shadow-lg shadow-blue-300 p-4 flex items-center justify-between">
+    <div className='w-full shadow-md'>
+      <nav className="bg-gray-200 w-full shadow-lg shadow-blue-300 p-4 flex items-center justify-between">
         <div>
-          <h1 className='font-bold text-2xl'>DaVinGee</h1>
+          <h1 className='font-bold text-2xl font-pacifico'>DaVinGee</h1>
           <p className='text-sm text-center'>Collections</p>
         </div>
         {/* Hamburger Icon */}
@@ -37,17 +41,25 @@ const NavBar = ({cartCount}) => {
         <div className="hidden sm:flex items-center justify-between">
           <ul className="flex space-x-4 text-black">
             <li>
-              <Link className="font-semibold hover:cursor-pointer hover:text-orange-500" to="/">Home</Link>
+              <Link className="font-semibold hover:cursor-pointer hover:text-orange-500 flex flex-col justify-center items-center" to="/">
+                <img src={HomeIcon} alt="home logo" className="w-7 h-7" />
+              Home</Link>
             </li>
             <li>
-              <Link className="font-semibold hover:cursor-pointer hover:text-orange-500" to="/products">Products</Link>
+              <Link className="font-semibold hover:cursor-pointer hover:text-orange-500 flex flex-col justify-center items-center" to="/products">
+                <img src={StoreIcon} alt="store logo" className="w-7 h-7" />
+              Products</Link>
             </li>
             <li>
-              <Link className="font-semibold hover:cursor-pointer hover:text-orange-500" to="/contact">Contact</Link>
+              <Link className="font-semibold hover:cursor-pointer flex flex-col justify-center items-center hover:text-orange-500" to="/contact">
+                <img src={ContactIcon} alt="contact logo" className="w-7 h-7" />
+                Contact
+              </Link>
             </li>
             <li>
-              <Link className="hover:bg-orange-500" to="/cart">
-              <img src={cart} alt="cart logo" />
+              <Link className="hover:text-orange-500 hover:cursor-pointer gap-1 flex flex-col justify-center items-center font-semibold" to="/cart">
+              <img className='' src={cart} alt="cart logo" />
+              Cart
               {cartCount > 0 && (
               <span className="absolute top-5 bg-red-700 text-white text-xs font-bold rounded-full px-2 py-0.5">
                 {cartCount}

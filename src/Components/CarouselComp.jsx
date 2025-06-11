@@ -18,7 +18,8 @@ import SlideImg13 from '../assets/images/bgg15.png'
 
 const CarouselComp = () => {
   return (
-    <div className='bg-gray-100 w-[90%] flex justify-center items-center m-auto p-8 family-poppins'>
+    <div className='bg-gray-200'>
+      <div className='bg-gray-200 w-[90%] flex justify-center items-center m-auto p-8 family-poppins'>
       <div className='w-[50%] m-auto flex flex-col justify-center items-center p-4'>
         <h2 className='text-black text-left font-bold pt-3'>Browse The Range</h2>
         <p className='text-black text-justify text-sm'>Check out our exclusive shoe catalogue made from the finest of materials <br /> that gives your feet the comfort it needs to step into the world</p>
@@ -86,6 +87,7 @@ const CarouselComp = () => {
           
         </div>
       </Carousel>
+    </div>
     </div>
   )
 }
