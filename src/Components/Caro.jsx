@@ -1,4 +1,5 @@
 import React from 'react'
+import { lazy } from 'react'
 import { Carousel } from 'react-responsive-carousel'
 import { Link } from 'react-router-dom'
 import CaroImage2 from '../assets/images/n7.png'
@@ -21,7 +22,7 @@ const Caro = () => {
                 transitionTime={900}
               >
                 <div className='flex w-[90%] m-auto justify-between items-center gap-8'>
-                  <img className='rounded-4xl'  src={CaroImage2} alt="Slide 1" />
+                  <img loading={lazy} className='rounded-4xl'  src={CaroImage2} alt="Slide 1" />
                   <div className='m-8'>
                     <p className='text-sm'>Maranini 1998</p>
                     <h2 className='text-3xl font-bold'>Moccasin</h2>
@@ -29,7 +30,7 @@ const Caro = () => {
                     <Link to={'/products'} className='bg-gray-300 text-black px-12 rounded-2xl text-sm hover:bg-gray-500 mt-4'>Explore More</Link>
                   </div>
                 </div>
-                <div className='flex w-[90%] m-auto justify-between items-center gap-4'>
+                <div loading={lazy} className='flex w-[90%] m-auto justify-between items-center gap-4'>
                   <img className='rounded-4xl' src={CaroImage3} alt="Slide 1" />
                   <div>
                     <p className='text-sm'>British 1994</p>
@@ -38,7 +39,7 @@ const Caro = () => {
                     <Link to={'/products'} className='bg-gray-300 text-black px-12 rounded-2xl text-sm hover:bg-gray-500 mt-4'>Explore More</Link>
                   </div>
                 </div>
-                <div className='flex w-[90%] m-auto justify-between items-center gap-4'>
+                <div loading={lazy} className='flex w-[90%] m-auto justify-between items-center gap-4'>
                   <img className='rounded-4xl' src={CaroImage4} alt="Slide 1" />
                   <div>
                     <p className='text-sm'>Jantamata 1999</p>
@@ -47,7 +48,7 @@ const Caro = () => {
                     <Link to={'/products'} className='bg-gray-300 text-black px-12 rounded-2xl text-sm hover:bg-gray-500 mt-4'>Explore More</Link>
                   </div>
                 </div>
-                <div className='flex w-[90%] m-auto justify-between items-center gap-4'>
+                <div loading={lazy} className='flex w-[90%] m-auto justify-between items-center gap-4'>
                   <img className='rounded-4xl' src={CaroImage5} alt="Slide 1" />
                   <div>
                     <p className='text-sm'>Pintiny 1947</p>

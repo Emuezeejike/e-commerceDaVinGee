@@ -15,12 +15,10 @@ import CheckOut from './Pages/CheckoutPage/CheckOut'
 function App() {
 
    const [cart, setCart] = useState(() => {
-    // Try to load cart from localStorage, or use empty array
     const saved = localStorage.getItem('cart');
     return saved ? JSON.parse(saved) : [];
   });
 
-  // Save cart to localStorage whenever it changes
   useEffect(() => {
     
     localStorage.setItem('cart', JSON.stringify(cart));

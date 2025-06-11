@@ -1,21 +1,32 @@
 import React from 'react'
-import Section1 from './Section1'
-
-import Section3 from './Section3'
-import CarouselComp from '../../Components/CarouselComp'
-import Section2 from './Section2'
-import Caro from '../../Components/Caro'
+import { lazy, Suspense } from 'react';
 import Warranty from '../../Components/Warranty'
 
 
 const Home = ({onAddToCart}) => {
+  const Section3 = lazy(() => import('./Section3'));
+  const Caro = lazy(() => import('../../Components/Caro'));
+  const CarouselComp = lazy(() => import('../../Components/CarouselComp'));
+  const Section2 = lazy(() => import('./Section2'));
+  const Section1 = lazy(() => import('./Section1'));
+  
   return (
     <div className='bg-gray-100'>
+        <Suspense fallback={<div>Loading...</div>}>
         <Section1 />
+        </Suspense>
+        <Suspense fallback={<div>Loading...</div>}>
         <Caro />
-        <Section3 onAddToCart={onAddToCart} />
+        </Suspense>
+        <Suspense fallback={<div>Loading...</div>}>
+          <Section3 onAddToCart={onAddToCart} />
+        </Suspense>
+        <Suspense fallback={<div>Loading...</div>}>
         <CarouselComp />
+        </Suspense>
+        <Suspense fallback={<div>Loading...</div>}>
         <Section2 />
+        </Suspense>
         <Warranty />      
     </div>
   )
