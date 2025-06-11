@@ -9,7 +9,7 @@ const Section2 = () => {
   return (
     <div className='bg-gray-200'>
         <div className=' flex items-center justify-center text-black family-poppins flex-col'>
-            <p className='text-sm font-serif'>Share your style with</p>
+            <p className='text-sm MyCustomFont'>Share your style with</p>
             <h2 className='font-bold tracking-wider font-pacifico text-2xl'>#DaVinGee</h2>
         </div>
         <div className='m-auto grid grid-cols-6 gap-2 p-4 family-poppins w-[90%]'>

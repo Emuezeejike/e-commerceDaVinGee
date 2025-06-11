@@ -5,7 +5,7 @@ import CaroImage2 from '../assets/images/n7.png'
 import CaroImage3 from '../assets/images/n12.png'
 import CaroImage4 from '../assets/images/n21.png'
 import CaroImage5 from '../assets/images/n25.png'
-import '../../../src/index.css';
+import '../../src/index.css';
 
 const Caro = () => {
   return (
