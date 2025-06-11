@@ -24,7 +24,9 @@ const ProductDetail = () => {
       link.download = 'product-detail.png';
       link.href = canvas.toDataURL();
       link.click();
-    }
+    }  else {
+    console.log('detailRef is null');
+  }
   };
 
   return (
@@ -37,7 +39,7 @@ const ProductDetail = () => {
       </button>
       <div ref={detailRef} 
       className="max-w-xl mx-auto mt-8 p-4 bg-white shadow rounded">
-        <img loading='lazy' src={product.img} alt={product.name} className="w-full h-64 object-cover rounded mb-4" />
+        <img loading='lazy' crossOrigin="anonymous" src={product.img} alt={product.name} className="w-full h-64 object-cover rounded mb-4" />
         <h1 className="text-2xl font-bold mb-2">{product.name}</h1>
         <p className="mb-2">{product.desc}</p>
         <p className="mb-2 font-semibold">Price: {product.price}</p>

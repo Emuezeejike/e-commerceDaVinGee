@@ -1,7 +1,7 @@
-import React from 'react'
-import { useState } from 'react';
+import React, { useState, useRef } from 'react';
 import { Link } from 'react-router-dom';
 import allProducts from '../../data/allProducts';
+import html2canvas from 'html2canvas'
 
 
 const ProductPerPage = 4;
@@ -12,12 +12,30 @@ const Section3 = ({ onAddToCart }) => {
     const handleLoadMore = () => {
       setVisibleCount((prev) => Math.min(prev + ProductPerPage, allProducts.length));
     };
+
+  const detailRef = useRef(null);
+
+  const handleCapture = async () => {
+  if (detailRef.current) {
+    const canvas = await html2canvas(detailRef.current);
+    const link = document.createElement('a');
+    link.download = 'product-detail.png';
+    link.href = canvas.toDataURL();
+    link.click();
+  }
+};
   
     return (
       <div>
         <div>
           <h2 className='font-bold text-center p-8'>Our Products</h2>
         </div>
+        <button
+              className="bg-blue-400 text-white px-4 py-2 rounded m-4 hover:bg-blue-500 transition duration-200 hover:cursor-pointer"
+              onClick={handleCapture}
+              >
+              Download Product Screenshot
+              </button>
         <div className='grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4 w-[90%] m-auto p-8 family-poppins'>
           {allProducts.slice(0, visibleCount).map((product) => (
             <div
@@ -36,11 +54,13 @@ const Section3 = ({ onAddToCart }) => {
               className="absolute top-20 left-1/2 -translate-x-1/2 z-10 opacity-0 group-hover:opacity-100 transition-opacity duration-200 bg-blue-300 text-black text-sm font-bold px-4 py-2 rounded shadow-lg hover:cursor-pointer text-center hover:bg-blue-500">
                 View Details
               </Link>
-              <div className='w-full'>
+              
+              <div ref={detailRef} className='w-full'>
                 <img
                   src={product.img}
                   alt='banner'
                   loading='lazy'
+                  crossOrigin="anonymous"
                   className='w-full h-fit object-cover transition duration-200 group-hover:blur-[2px]'
                 />
               </div>
