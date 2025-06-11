@@ -6,7 +6,7 @@ import '../../Components/ImageBg.css'
 
 
 
-const ProductPerPage = 8;
+const ProductPerPage = 4;
 
 const Products = ({ onAddToCart }) => {
   const [visibleCount, setVisibleCount] = useState(ProductPerPage);
@@ -16,16 +16,16 @@ const Products = ({ onAddToCart }) => {
   };
 
   return (
-    <div>
-      <div className='imageBg h-[20%] flex flex-col justify-center items-center text-white'>
-        <h1 className='font-bold text-3xl text-center text-black'>Our Products</h1>
+    <div className='bg-gray-100'>
+      <div className='flex flex-col justify-center items-center p-8'>
+        <h1 className='font-bold text-3xl family-Montserrat text-center text-black'>Our Products</h1>
         <div className='flex gap-2 mt-4 text-sm'>
-          <Link to={'/'} className='text-white font-semibold hover:text-orange-300 transition duration-200'>Home</Link>
+          <Link to={'/'} className='font-semibold hover:text-orange-300 transition duration-200'>Home</Link>
             <p className='font-semibold '>{'>'}</p>
-            <span className="text-sm ">Our Products</span>
+            <span className="text-sm family-Montserrat ">Our Products</span>
         </div>
       </div>
-      <div className='grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4 w-[90%] m-auto p-8 family-poppins'>
+      <div className='grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4 w-[90%] m-auto p-8 family-poppins'>
         {allProducts.slice(0, visibleCount).map((product) => (
           <div
             className='bg-gray-200 shadow-lg transition-transform duration-200 hover:scale-105 hover:shadow-2xl relative group overflow-hidden'
@@ -64,7 +64,7 @@ const Products = ({ onAddToCart }) => {
       {visibleCount < allProducts.length && (
         <div className="flex justify-center my-4">
           <button
-            className="bg-orange-300 text-black px-8 py-2 rounded-sm text-sm hover:bg-orange-400 transition"
+            className="bg-gray-300 text-black px-8 py-2 rounded-sm text-sm hover:bg-gray-500 transition"
             onClick={handleLoadMore}
           >
             Load More

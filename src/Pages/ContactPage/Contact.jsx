@@ -5,18 +5,25 @@ import phone from '../../assets/images/phone.svg'
 import workingTime from '../../assets/images/working.svg'
 import { Link } from 'react-router-dom'
 import '../../Components/ImageBg.css'
+import Bgimg from '../../assets/images/big6.png'
 
 const Contact = () => {
   return (
     <div>
-      <div className='imageBg h-[20%] flex flex-col justify-center items-center text-white'>
-        <h1 className='font-bold text-3xl text-center text-black'>Contact</h1>
+      <div className='bg-gray-200'>
+        <div className=' w-[40%] m-auto flex justify-center items-center'>
+        <img src={Bgimg} alt='background' className='' />
+        <div className='flex flex-col justify-center items-center'>
+          <h1 className='font-bold text-3xl text-center text-black'>Contact</h1>
         <div className='flex gap-2 mt-4 text-sm'>
-          <Link to={'/'} className='text-white font-semibold hover:text-orange-500 transition duration-200'>Home</Link>
+          <Link to={'/'} className='font-semibold hover:text-orange-500 transition duration-200'>Home</Link>
           <p className='font-semibold '>{'>'}</p>
           <span className="text-sm ">Contact</span>
         </div>
+        </div>  
       </div>
+      </div>
+      
       <div>
         <h1 className='text-center font-bold mt-4 text-2xl family-poppins'>Get In Touch With Us</h1>
         <p className='text-center text-sm family-poppins'>For more information about our Products & Services. Please feel free to drop us <br /> an Email. Our Staff will always be there to help you out. Do not hesitate!</p>
@@ -71,7 +78,7 @@ const Contact = () => {
                 <label className='mt-4 text-sm' htmlFor="message">Message</label>
                 <textarea className='border text-sm border-gray-400 rounded-sm p-8' cols={'50'} id="message" name="message" placeholder="Your Message" autoComplete='message' required></textarea>
               </div>
-              <button className="hover:cursor-pointer bg-orange-300 text-black px-10 p-2 rounded-sm text-sm my-8" type="submit">Submit</button>
+              <button className="hover:cursor-pointer hover:bg-gray-500 bg-gray-300 text-black px-10 p-2 rounded-sm text-sm my-8" type="submit">Submit</button>
             </form>
           </div>
       </div>    

@@ -5,9 +5,9 @@ import Footer from '../Components/Footer';
 
 
 
-const Layout = () => (
+const Layout = ({cart}) => (
   <>
-    <NavBar />
+    <NavBar  cartCount={cart.length}/>
     <Outlet />
     <Footer />
     

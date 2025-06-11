@@ -3,10 +3,10 @@ import { Link, useNavigate } from 'react-router-dom'
 import cart from '../assets/images/cart.svg'
 import searchImage from '../assets/images/search.svg'
 
-const NavBar = () => {
+const NavBar = ({cartCount}) => {
   const [search, setSearch] = useState('');
   const [menuOpen, setMenuOpen] = useState(false);
-  const navigate = useNavigate();
+  const navigate = useNavigate(); 
 
   const handleSubmit = (e) => {
     e.preventDefault();
@@ -15,8 +15,8 @@ const NavBar = () => {
   };
 
   return (
-    <div className='w-full bg-orange-200 shadow-md'>
-      <nav className="bg-orange-200 p-4 flex items-center justify-between">
+    <div className='w-full bg-gray-400 shadow-md'>
+      <nav className="bg-gray-300 shadow-lg shadow-blue-300 p-4 flex items-center justify-between">
         <div>
           <h1 className='font-bold text-2xl'>DaVinGee</h1>
           <p className='text-sm text-center'>Collections</p>
@@ -46,18 +46,19 @@ const NavBar = () => {
               <Link className="font-semibold hover:cursor-pointer hover:text-orange-500" to="/contact">Contact</Link>
             </li>
             <li>
-              <Link className="hover:bg-orange-500" to="/cart"><img src={cart} alt="cart logo" /></Link>
+              <Link className="hover:bg-orange-500" to="/cart">
+              <img src={cart} alt="cart logo" />
+              {cartCount > 0 && (
+              <span className="absolute top-5 bg-red-700 text-white text-xs font-bold rounded-full px-2 py-0.5">
+                {cartCount}
+              </span>
+              )}
+              </Link>
             </li>
           </ul>
         </div>
         <div className='hidden sm:block'>
             <form onSubmit={handleSubmit} className="flex items-center gap-2">
-            <button
-              type="submit"
-              className="text-black px-3 py-1 rounded hover:bg-orange-400"
-            >
-              <img src={searchImage} alt="search logo" />
-            </button>
             <input
               type="text"
               placeholder="Search..."
@@ -65,11 +66,17 @@ const NavBar = () => {
               onChange={(e) => setSearch(e.target.value)}
               className="border-b-2 py-1 text-black focus:outline-none focus:border-black transition duration-200"
             />
+            <button
+              type="submit"
+              className="text-black px-3 py-1 rounded hover:cursor-pointer"
+            >
+              <img src={searchImage} alt="search logo" />
+            </button>
           </form>
         </div>
         {/* Mobile Dropdown Menu */}
         {menuOpen && (
-          <div className="absolute top-16 left-0 w-full bg-orange-100 shadow-md flex flex-col items-center md:hidden z-50">
+          <div className="absolute top-16 left-0 w-full bg-gray-100 shadow-md flex flex-col items-center md:hidden z-50">
             <ul className="flex flex-col space-y-2 py-4 w-full items-center">
               <li>
                 <Link className="font-semibold hover:text-orange-500" to="/" onClick={() => setMenuOpen(false)}>Home</Link>
@@ -87,7 +94,7 @@ const NavBar = () => {
                 <form onSubmit={handleSubmit} className="flex items-center gap-2 mt-2">
                   <button
                     type="submit"
-                    className="text-black px-3 py-1 rounded hover:bg-orange-400"
+                    className="text-black px-3 py-1 rounded "
                   >
                     <img src={searchImage} alt="search logo" />
                   </button>

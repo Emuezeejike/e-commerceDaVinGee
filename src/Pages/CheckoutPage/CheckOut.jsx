@@ -1,6 +1,7 @@
 import React, { useState } from 'react'
 import '../../Components/ImageBg.css'
 import { Link } from 'react-router-dom';
+import Warranty from '../../Components/Warranty';
 
 const CheckOut = ({ cartItems = [] }) => {
   const [form, setForm] = useState({
@@ -46,7 +47,7 @@ const CheckOut = ({ cartItems = [] }) => {
 
   return (
     <div className='family-poppins bg-gray-100'>
-      <div className='imageBg h-[20%] flex flex-col justify-center items-center text-white'>
+      <div className='imageBg flex flex-col justify-center items-center text-white'>
         <h1 className='font-bold text-3xl text-center text-black'>Checkout</h1>
         <div className='flex gap-2 mt-4 text-sm'>
           <Link to={"/"} className='text-white font-semibold hover:text-orange-300 transition duration-200'>
@@ -56,7 +57,7 @@ const CheckOut = ({ cartItems = [] }) => {
           <span className="text-sm ">Checkout</span>
         </div>
       </div>
-      <div className='flex  justify-between m-auto p-8 w-[80%] min-h-screen bg-gray-100'>
+      <div className='flex justify-between m-auto p-8 w-[80%] min-h-screen bg-gray-100'>
         <form
           className='p-4 w-[50%] bg-white shadow rounded mt-8'
           onSubmit={handleSubmit}
@@ -99,7 +100,7 @@ const CheckOut = ({ cartItems = [] }) => {
           </div>
           <button
             type="submit"
-            className='bg-orange-400 hover:bg-orange-600 hover:cursor-pointer text-white font-bold py-2 px-6 rounded transition mt-4'
+            className='bg-gray-400 hover:bg-gray-600 hover:cursor-pointer text-black font-bold py-2 px-6 rounded transition mt-4'
           >
             Place Order
           </button>
@@ -123,6 +124,7 @@ const CheckOut = ({ cartItems = [] }) => {
           </div>
         </div>
       </div>
+      <Warranty />
     </div>
   )
 }

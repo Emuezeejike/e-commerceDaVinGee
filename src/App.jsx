@@ -47,8 +47,8 @@ function App() {
   return (
     <> 
       <Routes>
-        <Route path="/" element={<Layout />}>
-          <Route index element={<Home />} />
+        <Route path="/" element={<Layout cart={cart}/>}>
+          <Route index element={<Home onAddToCart={handleAddToCart} />} />
           <Route path="cart" element={<Cart cartItems={cart} onDelete={handleDeleteFromCart} />} />
           <Route path="products" element={<Products onAddToCart={handleAddToCart} />} />
           <Route path="productdetail/:id" element={<ProductDetail />} />

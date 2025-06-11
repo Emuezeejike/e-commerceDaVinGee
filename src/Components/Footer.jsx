@@ -3,8 +3,8 @@ import { Link } from 'react-router-dom'
 
 const Footer = () => {
   return (
-    <div className='bg-orange-200 w-full h-[40%] flex flex-col'>
-      <div className=' text-black h-[30%] flex justify-between p-6 family-poppins flex-wrap md:flex-nowrap gap-4'>
+    <div className='bg-gray-600 w-full flex flex-col'>
+      <div className=' text-black h-[70%] flex justify-between p-6 family-poppins flex-wrap md:flex-nowrap gap-4'>
       <div className='flex flex-col'>
         <h2 className='font-bold family-poppins'>DaVinGee.</h2>
         <div className='family-poppins text-sm pt-8'>
@@ -33,7 +33,7 @@ const Footer = () => {
       </div>
       <div>
         <hr />
-        <p className='text-sm text-black pl-6'>2023 DaVinGee. All rights reverved</p>
+        <p className='text-sm p-4 text-black pl-6'>2023 DaVinGee. All rights reverved</p>
       </div>
     </div>
 

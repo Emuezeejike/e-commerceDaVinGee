@@ -2,6 +2,7 @@ import React from "react";
 import "../../Components/ImageBg.css";
 import { Link } from "react-router-dom";
 import DeleteImage from "../../assets/images/delete.svg";
+import Warranty from "../../Components/Warranty";
 
 const Cart = ({ cartItems = [], onDelete }) => {
   console.log("Cart items:", cartItems);
@@ -11,7 +12,7 @@ const Cart = ({ cartItems = [], onDelete }) => {
     return sum + price * (item.quantity || 1);
   }, 0);
   return (
-    <div className="family-poppins bg-gray-100">
+    <div className="family-poppins bg-gray-100 ">
       <div className="imageBg h-[20%] flex flex-col justify-center items-center text-white">
         <h1 className="font-bold text-3xl text-center text-black">Cart</h1>
         <div className="flex gap-2 mt-4 text-sm">
@@ -25,23 +26,23 @@ const Cart = ({ cartItems = [], onDelete }) => {
           <span className="text-sm ">Cart</span>
         </div>
       </div>
-      <div className="w-[80%] m-auto p-8 family-poppins flex justify-between">
-        <div className="flex flex-col items-center justify-center mt-4 bg-orange-100 p-18 rounded-lg shadow-md">
+      <div className="w-[80%] flex-wrap m-auto p-8 family-poppins flex justify-between">
+        <div className="flex flex-col items-center justify-center mt-4 bg-gray-200 p-18 rounded-lg shadow-md">
           <p className="font-bold text-center pb-4">
             Total Price: #{totalPrice.toLocaleString()}
           </p>
           {cartItems.length > 0 && (
             <Link
               to={"/checkout"}
-              className=" bg-orange-400 hover:bg-orange-600 hover:cursor-pointer text-white font-bold py-2 px-6 rounded transition"
+              className=" bg-gray-400 hover:bg-gray-500 hover:cursor-pointer text-white font-bold py-2 px-6 rounded transition"
             >
               Check Out
             </Link>
           )}
         </div>
-        <div className="w-[60%] bg-white p-6 rounded-lg shadow-md">
+        <div className="w-[50%] bg-white p-6 rounded-lg shadow-md">
           <h2 className="font-bold text-2xl text-center mb-4">Cart Items</h2>
-          <div className="flex justify-between font-semibold gap-2 bg-orange-100">
+          <div className="flex justify-between font-semibold gap-2 bg-gray-200">
             <span className="">Item Name</span>
             <span className="">Price</span>
             <span className="">Quantity</span>
@@ -79,6 +80,7 @@ const Cart = ({ cartItems = [], onDelete }) => {
         </ul>
         </div>
       </div>
+      <Warranty />
     </div>
   );
 };

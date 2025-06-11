@@ -6,7 +6,7 @@ import image4 from '../assets/images/delivery.svg';
 
 const Warranty = () => {
   return (
-    <div className='bg-amber-100 flex flex-col md:flex-row justify-between items-center m-auto p-8 gap-4 family-poppins'>
+    <div className='bg-gray-400 flex flex-col md:flex-row justify-between items-center m-auto p-8 gap-4 family-poppins'>
         <div className='flex'>
             <img src={image3} alt='warranty' className='' />
             <div className='flex flex-col pl-2'>

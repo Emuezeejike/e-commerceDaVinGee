@@ -1,7 +1,10 @@
 .imageBg {
-    background-image: url('../assets/images/bg9.jpg');
+    background-image: url('../assets/images/bgg4.png');
     background-repeat: no-repeat;
-    background-size: 1300px 400px;
-    height: 40vh;
+    background-size: cover;
+    background-position: center;
+    width: 100%;
+    height: 50vh;
+
     /* background-size: cover;  */
 }

@@ -1,30 +1,41 @@
 import React from 'react';
-import image1 from '../assets/images/1.png';
-import image2 from '../assets/images/f3.png'; 
-import image3 from '../Assets/images/16.png'; 
-import image4 from '../Assets/images/c5.png'; 
-import image5 from '../Assets/images/f4.png'; 
-import image6 from '../Assets/images/13.png'; 
-import image7 from '../Assets/images/c1.png'; 
-import image8 from '../Assets/images/11.png'; 
-import image9 from '../Assets/images/c2.png';
-import image10 from '../Assets/images/f2.png';
-import image11 from '../Assets/images/16.png';
-import image12 from '../Assets/images/9.png';
-import image13 from '../Assets/images/12.png';
-import image14 from '../Assets/images/1.png';
-import image15 from '../Assets/images/c1.png';
-import image16 from '../Assets/images/f4.png';
-import image17 from '../Assets/images/11.png';
-import image18 from '../Assets/images/f1.png';
-import image19 from '../Assets/images/c5.png';
-import image20 from '../Assets/images/f3.png';
-import image21 from '../Assets/images/c4.png';
-import image22 from '../Assets/images/5.png';
-import image23 from '../Assets/images/f3.png';
+import image24 from '../Assets/images/n1.png';
+import image1 from '../assets/images/n6.png';
+import image2 from '../assets/images/n7.png'; 
+import image3 from '../Assets/images/n4.png'; 
+import image4 from '../Assets/images/n5.png'; 
+import image5 from '../Assets/images/n8.png'; 
+import image6 from '../Assets/images/n11.png'; 
+import image7 from '../Assets/images/n12.png'; 
+import image8 from '../Assets/images/n13.png'; 
+import image9 from '../Assets/images/n16.png';
+import image10 from '../Assets/images/n17.png';
+import image11 from '../Assets/images/n18.png';
+import image12 from '../Assets/images/n19.png';
+import image13 from '../Assets/images/n22.png';
+import image14 from '../Assets/images/n23.png';
+import image15 from '../Assets/images/n28.png';
+import image16 from '../Assets/images/n15.png';
+import image17 from '../Assets/images/n27.png';
+import image18 from '../Assets/images/n25.png';
+import image19 from '../Assets/images/n26.png';
+import image20 from '../Assets/images/n19.png';
+import image21 from '../Assets/images/n2.png';
+import image22 from '../Assets/images/n9.png';
+import image23 from '../Assets/images/n21.png';
+
 
 
 const allProducts = [
+  {
+    id: 0,
+    img: image24,
+    name: 'Loafers',
+    desc: 'Topnotch Loafers shoe for men',
+    price: 70000,
+    oldPrice: '#90000',
+    quantity: 1,
+  },
   {
     id: 1,
     img: image1,

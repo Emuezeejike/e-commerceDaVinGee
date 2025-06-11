@@ -1,27 +1,38 @@
 import React from 'react'
-import image1 from '../../Assets/images/3.png';
-import image2 from '../../Assets/images/f2.png';
-import image3 from '../../Assets/images/c5.png';
+import Slide1 from '../../assets/images/slide1.png'
+import Slide2 from '../../assets/images/slide2.png'
+import Slide3 from '../../assets/images/slide3.png'
+import Slide4 from '../../assets/images/slide4.png'
 
 const Section2 = () => {
   return (
-    <div>
-        <h2 className='text-black text-center font-bold text-2xl pt-3'>Browse The Range</h2>
-        <p className='text-black text-center'>Check out our exclusive shoe catalogue made from the finest of materials <br /> that gives your feet the comfort it needs to step into the world</p>
-        <div className='flex md:flex-row justify-between text-center w-[90%] m-auto items-center text-black gap-4 p-8 family-poppins'>
-            <div>
-                <img className='rounded-lg' src={image1} alt='men' />
-                <h3 className='family-poppins font-bold '>Men Wears</h3>
-            </div>
-            <div>
-                <img className='rounded-lg' src={image2} alt='men' />
-                <h3 className='family-poppins font-bold '>Women Wears</h3>
-            </div>
-            <div>
-                <img className='rounded-lg' src={image3} alt='men' />
-                <h3 className='family-poppins font-bold '>Kiddies Wears</h3>
-            </div>
+    <div className='bg-gray-100 family-poppins'>
+        <div className=' flex items-center justify-center text-black family-poppins flex-col'>
+            <p className='text-sm'>Share your style with</p>
+            <h2 className='font-bold tracking-wider text-2xl'>#DaVinGee</h2>
         </div>
+        <div className='m-auto grid grid-cols-6 gap-2 p-4 family-poppins w-[90%]'>
+            <div className='col-span-2 row-span-1'>
+                <img src={Slide4} alt='Instagram Post' className='w-full h-full object-cover' />
+            </div>
+            <div className=' col-span-2 row-span-1'>
+                <img src={Slide2} alt='Instagram Post' className='w-full h-full object-cover' />
+            </div>
+            <div className='col-span-2'>
+                <img src={Slide3} alt='Instagram Post' className='w-full h-full object-cover' />
+            </div>     
+        </div>
+        <div className='m-auto grid grid-cols-6 gap-2 p-4 family-poppins w-[90%]'>
+            <div className='col-span-2 row-span-1'>
+                <img src={Slide2} alt='Instagram Post' className='w-full h-full object-cover' />
+            </div>
+            <div className='col-span-2 row-span-1'>
+                <img src={Slide4} alt='Instagram Post' className='w-full h-full object-cover' />
+            </div>
+            <div className='col-span-2'>
+                <img src={Slide1} alt='Instagram Post' className='w-full h-full object-cover' />
+            </div>
+        </div>   
     </div>
   )
 }
