@@ -1,4 +1,4 @@
-import React, { lazy } from 'react'
+
 import Warranty from '../../Components/Warranty'
 import address from '../../assets/images/address.svg'
 import phone from '../../assets/images/phone.svg'
@@ -12,7 +12,7 @@ const Contact = () => {
     <div>
       <div className='bg-gray-200'>
         <div className=' w-[40%] m-auto flex justify-center items-center'>
-        <img loading={lazy} src={Bgimg} alt='background' className='' />
+        <img loading='lazy' src={Bgimg} alt='background' className='' />
         <div className='flex flex-col justify-center items-center'>
           <h1 className='font-bold text-3xl text-center text-black'>Contact</h1>
         <div className='flex gap-2 mt-4 text-sm'>

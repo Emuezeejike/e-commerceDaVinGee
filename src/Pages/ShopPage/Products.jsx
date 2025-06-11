@@ -47,6 +47,7 @@ const Products = ({ onAddToCart }) => {
               <img
                 src={product.img}
                 alt='banner'
+                loading='lazy'
                 className='w-full h-fit object-cover transition duration-200 group-hover:blur-[2px]'
               />
             </div>
@@ -76,4 +77,4 @@ const Products = ({ onAddToCart }) => {
   )
 }
 
-export default Products
+export default React.memo(Products)

@@ -1,5 +1,4 @@
 import React from 'react'
-import { lazy } from 'react'
 import Slide1 from '../../assets/images/slide1.png'
 import Slide2 from '../../assets/images/slide2.png'
 import Slide3 from '../../assets/images/slide3.png'
@@ -14,24 +13,24 @@ const Section2 = () => {
         </div>
         <div className='m-auto grid grid-cols-6 gap-2 p-4 family-poppins w-[90%]'>
             <div className='col-span-2 row-span-1'>
-                <img loading={lazy} src={Slide4} alt='Instagram Post' className='w-full h-full object-cover' />
+                <img loading='lazy' src={Slide4} alt='Instagram Post' className='w-full h-full object-cover' />
             </div>
             <div className=' col-span-2 row-span-1'>
-                <img loading={lazy} src={Slide2} alt='Instagram Post' className='w-full h-full object-cover' />
+                <img loading='lazy' src={Slide2} alt='Instagram Post' className='w-full h-full object-cover' />
             </div>
             <div className='col-span-2'>
-                <img loading={lazy} src={Slide3} alt='Instagram Post' className='w-full h-full object-cover' />
+                <img loading='lazy' src={Slide3} alt='Instagram Post' className='w-full h-full object-cover' />
             </div>     
         </div>
         <div className='m-auto grid grid-cols-6 gap-2 p-4 family-poppins w-[90%]'>
             <div className='col-span-2 row-span-1'>
-                <img loading={lazy} src={Slide2} alt='Instagram Post' className='w-full h-full object-cover' />
+                <img loading='lazy' src={Slide2} alt='Instagram Post' className='w-full h-full object-cover' />
             </div>
             <div className='col-span-2 row-span-1'>
-                <img loading={lazy} src={Slide4} alt='Instagram Post' className='w-full h-full object-cover' />
+                <img loading='lazy' src={Slide4} alt='Instagram Post' className='w-full h-full object-cover' />
             </div>
             <div className='col-span-2'>
-                <img loading={lazy} src={Slide1} alt='Instagram Post' className='w-full h-full object-cover' />
+                <img loading='lazy' src={Slide1} alt='Instagram Post' className='w-full h-full object-cover' />
             </div>
         </div>   
     </div>
