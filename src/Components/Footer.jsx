@@ -6,7 +6,7 @@ const Footer = () => {
     <div className='bg-gray-600 w-full flex flex-col'>
       <div className=' text-black h-[70%] flex justify-between p-6 family-poppins flex-wrap md:flex-nowrap gap-4'>
       <div className='flex flex-col'>
-        <h2 className='font-bold family-poppins'>DaVinGee.</h2>
+        <h2 className='font-bold font-pacifico'>DaVinGee.</h2>
         <div className='family-poppins text-sm pt-8'>
           <p>400 Osho Drive, Suite 200 Coral </p>
           <p>Lagos,</p>

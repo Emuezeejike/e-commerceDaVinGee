@@ -28,7 +28,7 @@ const Section3 = ({ onAddToCart }) => {
     return (
       <div>
         <div>
-          <h2 className='font-bold text-center p-8'>Our Products</h2>
+          <h2 className='font-bold text-center font-berkshire text-2xl p-8'>Our Products</h2>
         </div>
         <button
               className="bg-blue-400 text-white px-4 py-2 rounded m-4 hover:bg-blue-500 transition duration-200 hover:cursor-pointer"

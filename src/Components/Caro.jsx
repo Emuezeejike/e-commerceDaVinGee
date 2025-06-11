@@ -9,7 +9,10 @@ import '../../src/index.css';
 
 const Caro = () => {
   return (
-    <div className='bg-gray-200  flex justify-center items-center m-auto p-8'>
+    <div className='bg-gray-200'>
+    <h2 className='text-black text-center font-berkshire text-6xl font-bold m-8 pt-3'>Always a Step Ahead</h2>
+      <div className='bg-gray-200  flex justify-center items-center m-auto p-8'>
+      
         <div className='w-[10%] flex justify-center items-center p-4'>
             <Carousel className='m-auto'
                 showArrows={true}
@@ -61,6 +64,8 @@ const Caro = () => {
         </div>
         
     </div>
+    </div>
+    
   )
 }
 
