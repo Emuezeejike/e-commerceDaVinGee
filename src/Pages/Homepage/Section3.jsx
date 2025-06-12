@@ -39,22 +39,9 @@ const Section3 = ({ onAddToCart }) => {
         <div className='grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4 w-[90%] m-auto p-8 family-poppins'>
           {allProducts.slice(0, visibleCount).map((product) => (
             <div
-              className='bg-gray-100 shadow-lg transition-transform duration-200 hover:scale-105 hover:shadow-2xl relative group overflow-hidden'
+              className='bg-gray-100 shadow-lg duration-200'
               key={product.id}
-            >
-              <button
-                className="absolute top-8 left-1/2 -translate-x-1/2 z-10 opacity-0 group-hover:opacity-100 transition-opacity duration-200 bg-orange-300 text-black text-sm font-bold px-4 py-2 rounded shadow-lg hover:cursor-pointer  hover:bg-orange-500"
-                onClick={() => {console.log('Button clicked', product);
-                onAddToCart && onAddToCart({...product, quantity: 1})}}
-                style={{ pointerEvents: 'auto' }} 
-              >
-                Add to Cart
-              </button>
-              <Link to={`/productdetail/${product.id}`}
-              className="absolute top-20 left-1/2 -translate-x-1/2 z-10 opacity-0 group-hover:opacity-100 transition-opacity duration-200 bg-blue-300 text-black text-sm font-bold px-4 py-2 rounded shadow-lg hover:cursor-pointer text-center hover:bg-blue-500">
-                View Details
-              </Link>
-              
+            >              
               <div ref={detailRef} className='w-full'>
                 <img
                   src={product.img}
@@ -71,6 +58,20 @@ const Section3 = ({ onAddToCart }) => {
                   {product.price}
                   <span className='font-bold pl-22 line-through opacity-50'>{product.oldPrice}</span>
                 </p>
+              </div>
+              <div className="gap-2 flex justify-between p-2">
+                <button
+                className="duration-200 bg-orange-300 text-black text-sm font-bold px-4 py-2 rounded shadow-lg hover:cursor-pointer  hover:bg-orange-500"
+                onClick={() => {console.log('Button clicked', product);
+                onAddToCart && onAddToCart({...product, quantity: 1})}}
+                style={{ pointerEvents: 'auto' }} 
+              >
+                Add to Cart
+              </button>
+              <Link to={`/productdetail/${product.id}`}
+              className="duration-200 bg-blue-300 text-black text-sm font-bold px-4 py-2 rounded shadow-lg hover:cursor-pointer text-center hover:bg-blue-500">
+                View Details
+              </Link>
               </div>
             </div>
           ))}

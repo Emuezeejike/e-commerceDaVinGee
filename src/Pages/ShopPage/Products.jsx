@@ -1,10 +1,8 @@
-import React, { useState } from 'react'
-import allProducts from '../../data/allProducts';
-import Warranty from '../../Components/Warranty';
-import { Link } from 'react-router-dom'
-import '../../Components/ImageBg.css'
-
-
+import React, { useState } from "react";
+import allProducts from "../../data/allProducts";
+import Warranty from "../../Components/Warranty";
+import { Link } from "react-router-dom";
+import "../../Components/ImageBg.css";
 
 const ProductPerPage = 4;
 
@@ -12,52 +10,66 @@ const Products = ({ onAddToCart }) => {
   const [visibleCount, setVisibleCount] = useState(ProductPerPage);
 
   const handleLoadMore = () => {
-    setVisibleCount((prev) => Math.min(prev + ProductPerPage, allProducts.length));
+    setVisibleCount((prev) =>
+      Math.min(prev + ProductPerPage, allProducts.length)
+    );
   };
 
   return (
-    <div className='bg-gray-100'>
-      <div className='flex flex-col justify-center items-center p-8'>
-        <h1 className='font-bold text-3xl family-Montserrat text-center text-black'>Our Products</h1>
-        <div className='flex gap-2 mt-4 text-sm'>
-          <Link to={'/'} className='font-semibold hover:text-orange-300 transition duration-200'>Home</Link>
-            <p className='font-semibold '>{'>'}</p>
-            <span className="text-sm family-Montserrat ">Our Products</span>
+    <div className="bg-gray-100">
+      <div className="flex flex-col justify-center items-center p-8">
+        <h1 className="font-bold text-3xl font-Montserrat text-center text-black">
+          Our Products
+        </h1>
+        <div className="flex gap-2 mt-4 text-sm">
+          <Link
+            to={"/"}
+            className="font-semibold hover:text-orange-300 transition duration-200"
+          >
+            Home
+          </Link>
+          <p className="font-semibold ">{">"}</p>
+          <span className="text-sm font-Montserrat ">Our Products</span>
         </div>
       </div>
-      <div className='grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4 w-[90%] m-auto p-8 family-poppins'>
+      <div className="grid grid-cols-1 sm:grid-cols-1 md:grid-cols-3 lg:grid-cols-4 gap-4 w-[95%] mx-auto p-4 font-poppins">
         {allProducts.slice(0, visibleCount).map((product) => (
-          <div
-            className='bg-gray-200 shadow-lg transition-transform duration-200 hover:scale-105 hover:shadow-2xl relative group overflow-hidden'
-            key={product.id}
-          >
-            <button
-              className="absolute top-8 left-1/2 -translate-x-1/2 z-10 opacity-0 group-hover:opacity-100 transition-opacity duration-200 bg-orange-300 text-black text-sm font-bold px-4 py-2 rounded shadow-lg hover:cursor-pointer  hover:bg-orange-500"
-              onClick={() => {console.log('Button clicked', product);
-              onAddToCart && onAddToCart({...product, quantity: 1})}}
-              style={{ pointerEvents: 'auto' }} 
-            >
-              Add to Cart
-            </button>
-            <Link to={`/productdetail/${product.id}`}
-            className="absolute top-20 left-1/2 -translate-x-1/2 z-10 opacity-0 group-hover:opacity-100 transition-opacity duration-200 bg-blue-300 text-black text-sm font-bold px-4 py-2 rounded shadow-lg hover:cursor-pointer text-center hover:bg-blue-500">
-              View Details
-            </Link>
-            <div className='w-full h-[70%]'>
+          <div className="bg-gray-200 shadow-lg flex flex-col h-full" key={product.id}>
+            <div className="w-full h-48 sm:h-56 md:h-64 flex-shrink-0">
               <img
                 src={product.img}
-                alt='banner'
-                loading='lazy'
-                className='w-full h-fit object-cover transition duration-200 group-hover:blur-[2px]'
+                alt="banner"
+                loading="lazy"
+                className="w-full h-full object-cover rounded-t"
               />
             </div>
-            <div className="p-2 transition duration-200 group-hover:blur-[2px]">
-              <h3 className='family-poppins font-bold'>{product.name}</h3>
-              <p>{product.desc}</p>
-              <p className='family-poppins font-bold'>
-                {product.price}
-                <span className='font-bold pl-22 line-through opacity-50'>{product.oldPrice}</span>
+            <div className="p-3 flex-1 flex flex-col">
+              <h3 className="font-poppins font-bold text-lg mb-1">{product.name}</h3>
+              <p className="mb-2 text-sm">{product.desc}</p>
+              <p className="font-poppins font-bold mb-2 flex flex-wrap items-center gap-1">
+                <span className="text-base sm:text-lg md:text-xl text-black">{product.price}</span>
+                <span className="font-bold line-through opacity-50 text-xs sm:text-sm md:text-base align-middle text-gray-500">
+                {product.oldPrice}
+                </span>
               </p>
+            </div>
+            <div className="flex flex-col sm:flex-row gap-2 mt-auto">
+              <button
+                className="bg-orange-300 text-black text-sm font-bold px-4 py-2 rounded shadow-lg hover:bg-orange-500 transition"
+                onClick={() => {
+                  console.log("Button clicked", product);
+                  onAddToCart && onAddToCart({ ...product, quantity: 1 });
+                }}
+                style={{ pointerEvents: "auto" }}
+              >
+                Add to Cart
+              </button>
+              <Link
+                to={`/productdetail/${product.id}`}
+                className="bg-blue-300 text-black text-sm font-bold px-4 py-2 rounded shadow-lg hover:bg-blue-500 transition text-center"
+              >
+                View Details
+              </Link>
             </div>
           </div>
         ))}
@@ -74,7 +86,7 @@ const Products = ({ onAddToCart }) => {
       )}
       <Warranty />
     </div>
-  )
-}
+  );
+};
 
-export default React.memo(Products)
+export default React.memo(Products);
