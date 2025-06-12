@@ -34,7 +34,10 @@ const Products = ({ onAddToCart }) => {
       </div>
       <div className="grid grid-cols-1 sm:grid-cols-1 md:grid-cols-3 lg:grid-cols-4 gap-4 w-[95%] mx-auto p-4 font-poppins">
         {allProducts.slice(0, visibleCount).map((product) => (
-          <div className="bg-gray-200 shadow-lg flex flex-col h-full" key={product.id}>
+          <div
+            className="bg-gray-200 shadow-lg flex flex-col h-full"
+            key={product.id}
+          >
             <div className="w-full h-48 sm:h-56 md:h-64 flex-shrink-0">
               <img
                 src={product.img}
@@ -44,12 +47,16 @@ const Products = ({ onAddToCart }) => {
               />
             </div>
             <div className="p-3 flex-1 flex flex-col">
-              <h3 className="font-poppins font-bold text-lg mb-1">{product.name}</h3>
+              <h3 className="font-poppins font-bold text-lg mb-1">
+                {product.name}
+              </h3>
               <p className="mb-2 text-sm">{product.desc}</p>
               <p className="font-poppins font-bold mb-2 flex flex-wrap items-center gap-1">
-                <span className="text-base sm:text-lg md:text-xl text-black">{product.price}</span>
+                <span className="text-base sm:text-lg md:text-xl text-black">
+                  {product.price}
+                </span>
                 <span className="font-bold line-through opacity-50 text-xs sm:text-sm md:text-base align-middle text-gray-500">
-                {product.oldPrice}
+                  {product.oldPrice}
                 </span>
               </p>
             </div>
