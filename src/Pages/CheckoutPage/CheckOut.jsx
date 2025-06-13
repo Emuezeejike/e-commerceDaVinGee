@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import { useNavigate } from "react-router-dom";
 import "../../Components/ImageBg.css";
 import { Link } from "react-router-dom";
 import Warranty from "../../Components/Warranty";
@@ -24,6 +25,8 @@ const CheckOut = ({ cartItems = [] }) => {
     setForm({ ...form, [e.target.name]: e.target.value });
   };
 
+  const navigate = useNavigate();
+
   const handleSubmit = (e) => {
     e.preventDefault();
 
@@ -43,8 +46,8 @@ const CheckOut = ({ cartItems = [] }) => {
       return;
     }
     alert("Your Order Has Been Placed, and it is being processed");
-    // This will refresh the page and clearing the cart items
-    window.location.reload();
+    // This will refresh the page and clearing the cart items and return to home
+    navigate("/");
   };
 
   return (
