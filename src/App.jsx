@@ -61,7 +61,7 @@ function App() {
             />
             <Route path="*" element={<NotFoundPage />} />
             <Route path="contact" element={<Contact />} />
-            <Route path="checkout" element={<CheckOut cartItems={cart} />} />
+            <Route path="checkout" element={<CheckOut cartItems={cart} setCart={setCart} />} />
           </Route>
         </Routes>
       </Suspense>

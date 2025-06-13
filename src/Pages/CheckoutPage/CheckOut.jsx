@@ -4,7 +4,7 @@ import "../../Components/ImageBg.css";
 import { Link } from "react-router-dom";
 import Warranty from "../../Components/Warranty";
 
-const CheckOut = ({ cartItems = [] }) => {
+const CheckOut = ({ cartItems = [], setCart }) => {
   const [form, setForm] = useState({
     firstName: "",
     lastName: "",
@@ -31,8 +31,11 @@ const CheckOut = ({ cartItems = [] }) => {
     e.preventDefault();
 
     // This refreshes the LocalStorage when an order has been placed
-    localStorage.removeItem("cartItems");
     localStorage.removeItem("cart");
+
+    if (typeof setCart === "function") {
+    setCart([]);
+  }
     if (
       !form.firstName ||
       !form.lastName ||
