@@ -47,10 +47,10 @@ const filteredProducts = useMemo(() => {
           <span className="text-sm font-Montserrat ">Our Products</span>
         </div>
       </div>
-      <div className="grid grid-cols-1 sm:grid-cols-1 md:grid-cols-3 lg:grid-cols-4 gap-4 w-[95%] mx-auto p-4 font-poppins">
+      <div className="grid grid-cols-1 sm:grid-cols-1 md:grid-cols-3 lg:grid-cols-4 gap-4 gap-y-6 w-[95%] mx-auto p-4 font-poppins">
         {filteredProducts.slice(0, visibleCount).map((product) => (
           <div
-            className="bg-gray-200 shadow-lg flex flex-col h-full"
+            className="bg-gray-200 shadow-lg flex flex-col h-full p-4 sm:p-4"
             key={product.id}
           >
             <div className="w-full h-48 sm:h-56 md:h-64 flex-shrink-0">
