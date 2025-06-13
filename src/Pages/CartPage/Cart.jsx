@@ -16,7 +16,7 @@ const Cart = ({ cartItems = [], onDelete }) => {
   const snapshotRef = useRef(null);
 
   useEffect(() => {
-    // Check for browser support
+    
     const SpeechRecognition =
       window.SpeechRecognition || window.webkitSpeechRecognition;
     if (!SpeechRecognition) return;
@@ -39,7 +39,7 @@ const Cart = ({ cartItems = [], onDelete }) => {
 
     recognition.start();
 
-    // Cleanup
+
     return () => recognition.stop();
   }, []);
 

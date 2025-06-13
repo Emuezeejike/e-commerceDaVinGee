@@ -7,7 +7,6 @@ const ProductDetail = ({ onAddToCart }) => {
   const snapshotRef = useRef(null);
 
   useEffect(() => {
-    // Check for browser support
     const SpeechRecognition =
       window.SpeechRecognition || window.webkitSpeechRecognition;
     if (!SpeechRecognition) return;
@@ -30,7 +29,6 @@ const ProductDetail = ({ onAddToCart }) => {
 
     recognition.start();
 
-    // Cleanup
     return () => recognition.stop();
   }, []);
 
