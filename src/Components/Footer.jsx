@@ -1,7 +1,22 @@
-import React from "react";
+import React, { useState } from "react";
 import { Link } from "react-router-dom";
 
 const Footer = () => {
+
+  const [email, setEmail] = useState("");
+  const [subscribed, setSubscribed] = useState(false);
+
+  const handleSubscribe = (e) => {
+    e.preventDefault();
+    if (!email || !/\S+@\S+\.\S+/.test(email)) {
+      alert("Please enter a valid email address.");
+      return;
+    }
+    setSubscribed(true);
+    setEmail("");
+    
+  };
+
   return (
     <div className="bg-gray-950 w-full flex flex-col text-gray-300">
       <div className="h-[70%] flex justify-between p-6 family-poppins flex-wrap md:flex-nowrap gap-4">
@@ -22,8 +37,8 @@ const Footer = () => {
               </Link>
             </li>
             <li>
-              <Link className="hover:text-amber-500" to={"/shop"}>
-                Shop
+              <Link className="hover:text-amber-500" to={"/products"}>
+                Products
               </Link>
             </li>
             <li>
@@ -35,17 +50,26 @@ const Footer = () => {
         </div>
         <div className="flex flex-col gap-4 text-gray-300">
           <h1 className="opacity-50 family-poppins">Newsletter</h1>
-          <div className="flex gap-2">
-            <label htmlFor="email"></label>
+          <form className="flex gap-2" onSubmit={handleSubscribe}>
+            <label htmlFor="email" className="sr-only">Email</label>
             <input
               className="text-white border-b-2 border-gray-100 focus:outline-none focus:border-black transition duration-200"
               type="text"
+              id="email"
               placeholder="Enter Your Email Address"
+              value={email}
+              onChange={(e) => setEmail(e.target.value)}
             />
-            <button className="bg-orange-600 text-black p-2 text-sm rounded-sm font-bold hover:bg-amber-500">
+            <button
+              type="submit"
+              className="bg-orange-600 text-black p-2 text-sm rounded-sm font-bold hover:bg-amber-500"
+            >
               Subscribe
             </button>
-          </div>
+          </form>
+          {subscribed && (
+            <span className="text-green-400 text-xs mt-2">Thank you for subscribing!</span>
+          )}
         </div>
       </div>
       <div>
