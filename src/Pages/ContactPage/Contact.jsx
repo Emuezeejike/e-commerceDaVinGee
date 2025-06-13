@@ -23,7 +23,7 @@ const Contact = () => {
             </div>
             <div className="flex flex-col justify-center items-center w-full">
               <h1 className="font-bold text-3xl text-center text-black">
-                Contact
+                Contact Us
               </h1>
               <div className="flex gap-2 mt-4 text-sm">
                 <Link
