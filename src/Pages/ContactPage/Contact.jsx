@@ -59,7 +59,7 @@ const Contact = () => {
             <div>
               <p className="font-bold">Address</p>
               <p className="text-sm">
-                400 Osho Drive, <br /> Suite 200 Coral, <br /> Lagos Nigeria
+                Block 39, <br /> Babani, Ajegunle Apapa, <br /> Lagos Nigeria.
               </p>
             </div>
           </div>

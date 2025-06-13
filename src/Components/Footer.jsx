@@ -9,7 +9,7 @@ const Footer = () => {
           <h2 className="font-bold font-pacifico text-gray-50">DaVinGee.</h2>
           <div className="family-poppins text-sm pt-8 text-gray-300">
             <p>Block 39 Babani, Ajegunle </p>
-            <p>Apap Lagos.</p>
+            <p>Apapa Lagos.</p>
             <p>PO 10011 Nigeria</p>
           </div>
         </div>
