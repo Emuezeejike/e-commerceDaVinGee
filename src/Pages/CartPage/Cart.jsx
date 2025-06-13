@@ -1,6 +1,7 @@
-import React from "react";
+import React, { useRef, useEffect } from "react";
 import "../../Components/ImageBg.css";
 import { Link } from "react-router-dom";
+import html2canvas from "html2canvas";
 import DeleteImage from "../../assets/images/delete.svg";
 import Warranty from "../../Components/Warranty";
 
@@ -11,8 +12,49 @@ const Cart = ({ cartItems = [], onDelete }) => {
     const price = Number(item.price) || 0;
     return sum + price * (item.quantity || 1);
   }, 0);
+
+  const snapshotRef = useRef(null);
+
+  useEffect(() => {
+    // Check for browser support
+    const SpeechRecognition =
+      window.SpeechRecognition || window.webkitSpeechRecognition;
+    if (!SpeechRecognition) return;
+
+    const recognition = new SpeechRecognition();
+    recognition.continuous = true;
+    recognition.lang = "en-US";
+
+    recognition.onresult = (event) => {
+      const transcript = event.results[event.results.length - 1][0].transcript
+        .trim()
+        .toLowerCase();
+      if (
+        transcript.includes("take snapshot") ||
+        transcript.includes("take screenshot")
+      ) {
+        handleSnapshot();
+      }
+    };
+
+    recognition.start();
+
+    // Cleanup
+    return () => recognition.stop();
+  }, []);
+
+  const handleSnapshot = async () => {
+    if (snapshotRef.current) {
+      const canvas = await html2canvas(snapshotRef.current);
+      const link = document.createElement("a");
+      link.download = "snapshot.png";
+      link.href = canvas.toDataURL();
+      link.click();
+    }
+  };
+
   return (
-    <div className="family-poppins bg-gray-100 ">
+    <div ref={snapshotRef} className="family-poppins bg-gray-100 ">
       <div className="imageBg h-[20%] flex flex-col justify-center items-center text-white">
         <h1 className="font-bold text-3xl text-center text-black">Cart</h1>
         <div className="flex gap-2 mt-4 text-sm">
@@ -23,9 +65,21 @@ const Cart = ({ cartItems = [], onDelete }) => {
             Home
           </Link>
           <p className="font-semibold ">{">"}</p>
+          <Link
+            to={"/products"}
+            className="text-white font-semibold hover:text-orange-300 transition duration-200"
+          >
+            Products
+          </Link>
+          <p className="font-semibold ">{">"}</p>
           <span className="text-sm ">Cart</span>
         </div>
       </div>
+      <h2 className="font-semibold">
+        Say <span className="font-croissant">"take snapshot"</span> or{" "}
+        <span className="font-croissant">"take screenshot"</span> to capture
+        this area!
+      </h2>
       <div className="w-full flex flex-col md:flex-row flex-wrap m-auto p-4 md:p-8 family-poppins justify-between gap-6">
         <div className="flex flex-col items-center justify-center mt-4 bg-gray-200 p-6 rounded-lg shadow-md w-full md:w-2/5">
           <p className="font-bold text-center pb-4">

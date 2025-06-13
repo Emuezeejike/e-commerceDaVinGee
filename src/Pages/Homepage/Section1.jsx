@@ -15,7 +15,7 @@ const Section1 = () => {
         </h2>
         <Link
           className="hover:cursor-pointer bg-gray-300 text-black p-2 rounded-sm text-sm hover:gray-500 mt-4"
-          to={"/product"}
+          to={"/products"}
         >
           Shop Now
         </Link>

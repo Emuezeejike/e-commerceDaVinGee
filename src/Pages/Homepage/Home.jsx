@@ -10,6 +10,7 @@ const Section1 = lazy(() => import("./Section1"));
 const Home = ({ onAddToCart }) => {
   return (
     <div className="bg-gray-100">
+      
       <Suspense fallback={<div>Loading...</div>}>
         <Section1 />
       </Suspense>

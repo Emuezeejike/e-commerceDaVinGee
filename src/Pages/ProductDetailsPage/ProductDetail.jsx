@@ -1,12 +1,51 @@
-import React, { useRef } from "react";
+import React, { useRef, useEffect } from "react";
 import { useParams } from "react-router-dom";
 import allProducts from "../../data/allProducts";
 import html2canvas from "html2canvas";
 
 const ProductDetail = ({ onAddToCart }) => {
+  const snapshotRef = useRef(null);
+
+  useEffect(() => {
+    // Check for browser support
+    const SpeechRecognition =
+      window.SpeechRecognition || window.webkitSpeechRecognition;
+    if (!SpeechRecognition) return;
+
+    const recognition = new SpeechRecognition();
+    recognition.continuous = true;
+    recognition.lang = "en-US";
+
+    recognition.onresult = (event) => {
+      const transcript = event.results[event.results.length - 1][0].transcript
+        .trim()
+        .toLowerCase();
+      if (
+        transcript.includes("take snapshot") ||
+        transcript.includes("take screenshot")
+      ) {
+        handleSnapshot();
+      }
+    };
+
+    recognition.start();
+
+    // Cleanup
+    return () => recognition.stop();
+  }, []);
+
+  const handleSnapshot = async () => {
+    if (snapshotRef.current) {
+      const canvas = await html2canvas(snapshotRef.current);
+      const link = document.createElement("a");
+      link.download = "snapshot.png";
+      link.href = canvas.toDataURL();
+      link.click();
+    }
+  };
+
   const { id } = useParams();
   const product = allProducts.find((p) => p.id === Number(id));
-  const detailRef = useRef(null);
 
   if (!product) {
     return (
@@ -16,18 +55,6 @@ const ProductDetail = ({ onAddToCart }) => {
     );
   }
 
-  const handleCapture = async () => {
-    if (detailRef.current) {
-      const canvas = await html2canvas(detailRef.current);
-      const link = document.createElement("a");
-      link.download = "product-detail.png";
-      link.href = canvas.toDataURL();
-      link.click();
-    } else {
-      console.log("detailRef is null");
-    }
-  };
-
   const handleAddToCart = () => {
     if (onAddToCart) {
       onAddToCart({ ...product, quantity: 1 });
@@ -35,17 +62,13 @@ const ProductDetail = ({ onAddToCart }) => {
   };
 
   return (
-    <div>
-      <button
-        className="bg-blue-400 text-white px-4 py-2 rounded m-4 hover:bg-blue-500 transition duration-200 hover:cursor-pointer"
-        onClick={handleCapture}
-      >
-        Screenshot
-      </button>
-      <div
-        ref={detailRef}
-        className="max-w-xl mx-auto mt-8 p-4 bg-white shadow rounded"
-      >
+    <div ref={snapshotRef}>
+      <h2 className="font-semibold">
+        Say <span className="font-croissant">"take snapshot"</span> or{" "}
+        <span className="font-croissant">"take screenshot"</span> to capture
+        this area!
+      </h2>
+      <div className="max-w-xl mx-auto mt-8 p-4 bg-white shadow rounded">
         <img
           loading="lazy"
           crossOrigin="anonymous"
@@ -60,7 +83,7 @@ const ProductDetail = ({ onAddToCart }) => {
           Old Price: {product.oldPrice}
         </p>
         <button
-          className="bg-orange-400 text-white px-4 py-2 rounded mt-4 hover:bg-orange-500 transition duration-200 hover:cursor-pointer"
+          className="bg-orange-400 text-white px-4 py-2 rounded mt-4 hover:bg-orange-500 active:bg-orange-600 active:scale-95 transition duration-200 hover:cursor-pointer"
           onClick={handleAddToCart}
         >
           Add to Cart

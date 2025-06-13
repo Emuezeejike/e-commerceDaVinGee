@@ -10,6 +10,7 @@ import "../../src/index.css";
 const NavBar = ({ cartCount }) => {
   const [search, setSearch] = useState("");
   const [menuOpen, setMenuOpen] = useState(false);
+  const [showCartCount, setShowCartCount] = useState(true);
   const navigate = useNavigate();
 
   const handleSubmit = (e) => {
@@ -18,8 +19,20 @@ const NavBar = ({ cartCount }) => {
     setSearch("");
   };
 
+
+  // this line of codes handles the badge displaying the cart count on the hambuger 
+  const handleHamburgerClick = () => {
+    setMenuOpen((prev) => {
+      const newState = !prev;
+      if (!newState)
+        setShowCartCount(true); // Show cart count when closing menu
+      else setShowCartCount(false); // Hide cart count when opening menu
+      return newState;
+    });
+  };
+
   return (
-    <div className="w-full shadow-md">
+    <div className="w-full shadow-md sticky top-0 z-50">
       <nav className="bg-gray-200 w-full shadow-lg shadow-blue-300 p-4 flex items-center justify-between">
         <div>
           <h1 className="font-bold text-2xl font-pacifico">DaVinGee</h1>
@@ -28,7 +41,7 @@ const NavBar = ({ cartCount }) => {
         {/* Hamburger Icon */}
         <div className="sm:hidden flex items-center">
           <button
-            onClick={() => setMenuOpen(!menuOpen)}
+            onClick={handleHamburgerClick}
             className="focus:outline-none"
             aria-label="Toggle menu"
           >
@@ -47,6 +60,11 @@ const NavBar = ({ cartCount }) => {
                 }
               />
             </svg>
+            {showCartCount && (
+              <span className="absolute top-5 right-4 bg-red-700 text-white text-xs font-bold rounded-full px-2 py-0.5">
+                {cartCount}
+              </span>
+            )}
           </button>
         </div>
         {/* Desktop Menu */}
