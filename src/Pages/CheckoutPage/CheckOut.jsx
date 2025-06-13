@@ -26,7 +26,10 @@ const CheckOut = ({ cartItems = [] }) => {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    // Simple validation: check required fields
+
+    // This refreshes the LocalStorage when an order has been placed
+    localStorage.removeItem("cartItems");
+    localStorage.removeItem("cart");
     if (
       !form.firstName ||
       !form.lastName ||
@@ -40,6 +43,8 @@ const CheckOut = ({ cartItems = [] }) => {
       return;
     }
     alert("Your Order Has Been Placed, and it is being processed");
+    // This will refresh the page and clearing the cart items
+    window.location.reload();
   };
 
   return (
@@ -133,7 +138,7 @@ const CheckOut = ({ cartItems = [] }) => {
               type="text"
               id="town"
               name="town"
-              placeholder="Optional"
+              placeholder="Lagos"
               autoComplete="address-level2"
               required
               value={form.town}

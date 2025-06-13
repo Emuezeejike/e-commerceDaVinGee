@@ -5,7 +5,6 @@ import { Link } from "react-router-dom";
 import "../../Components/ImageBg.css";
 import { useLocation } from "react-router-dom";
 import { useMemo } from "react";
-import VoiceShot from "../../Components/VoiceShot";
 
 const ProductPerPage = 4;
 
@@ -110,7 +109,6 @@ const filteredProducts = useMemo(() => {
           </button>
         </div>
       )}
-      <VoiceShot />
       <Warranty />
     </div>
   );
