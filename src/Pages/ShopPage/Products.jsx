@@ -80,7 +80,7 @@ const filteredProducts = useMemo(() => {
             )}
             <div className="flex flex-col sm:flex-row gap-2 mt-auto">
               <button
-                className="bg-orange-300 text-black text-sm font-bold px-4 py-2 rounded shadow-lg hover:bg-orange-500 active:bg-orange-600 active:scale-95 transition"
+                className="bg-orange-300 text-black text-sm font-bold px-4 py-2 rounded shadow-lg hover:bg-orange-400 active:bg-orange-400 active:scale-95 transition"
                 onClick={() => {
                   console.log("Button clicked", product);
                   onAddToCart && onAddToCart({ ...product, quantity: 1 });

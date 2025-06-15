@@ -48,9 +48,14 @@ const Caro = () => {
 
   useEffect(() => {
     if (scrollRef.current) {
+      const container = scrollRef.current;
       const slide = scrollRef.current.children[current];
       if (slide) {
-        slide.scrollIntoView({ behavior: "smooth", inline: "center", block: "nearest" });
+        // Only scroll horizontally
+        container.scrollTo({
+          left: slide.offsetLeft,
+          behavior: "smooth",
+        });
       }
     }
   }, [current]);
@@ -64,7 +69,7 @@ const Caro = () => {
         <div className="w-full max-w-6xl mx-auto p-4">
           <div
             ref={scrollRef}
-            className="flex overflow-x-auto gap-8 scrollbar-thin scrollbar-thumb-gray-400 pb-4 scroll-smooth"
+            className="flex overflow-x-auto overflow-y-hidden gap-8 scrollbar-thin scrollbar-thumb-gray-400 pb-4 scroll-smooth"
           >
             {slides.map((slide, idx) => (
               <div
