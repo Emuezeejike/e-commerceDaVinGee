@@ -33,7 +33,7 @@ const slides = [
   },
 ];
 
-const SLIDE_INTERVAL = 4000; // 4 seconds
+const SLIDE_INTERVAL = 4000; 
 
 const Caro = () => {
   const scrollRef = useRef(null);
