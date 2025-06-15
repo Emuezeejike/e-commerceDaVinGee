@@ -10,7 +10,6 @@ import "../../src/index.css";
 const NavBar = ({ cartCount }) => {
   const [search, setSearch] = useState("");
   const [menuOpen, setMenuOpen] = useState(false);
-  const [showCartCount, setShowCartCount] = useState(true);
   const navigate = useNavigate();
 
   const handleSubmit = (e) => {
@@ -24,9 +23,6 @@ const NavBar = ({ cartCount }) => {
   const handleHamburgerClick = () => {
     setMenuOpen((prev) => {
       const newState = !prev;
-      if (!newState)
-        setShowCartCount(true); // Show cart count when closing menu
-      else setShowCartCount(false); // Hide cart count when opening menu
       return newState;
     });
   };
@@ -60,11 +56,6 @@ const NavBar = ({ cartCount }) => {
                 }
               />
             </svg>
-            {showCartCount && (
-              <span className="absolute top-5 right-4 bg-red-700 text-white text-xs font-bold rounded-full px-2 py-0.5">
-                {cartCount}
-              </span>
-            )}
           </button>
         </div>
         {/* Desktop Menu */}
@@ -97,8 +88,10 @@ const NavBar = ({ cartCount }) => {
                 Contact
               </Link>
             </li>
-            <li>
-              <Link
+          </ul>
+        </div>
+        <div>
+          <Link
                 className="hover:text-orange-500 hover:cursor-pointer gap-1 flex flex-col justify-center items-center font-semibold"
                 to="/cart"
               >
@@ -109,9 +102,7 @@ const NavBar = ({ cartCount }) => {
                     {cartCount}
                   </span>
                 )}
-              </Link>
-            </li>
-          </ul>
+          </Link>
         </div>
         <div className="hidden sm:block">
           <form onSubmit={handleSubmit} className="flex items-center gap-2">
@@ -159,18 +150,6 @@ const NavBar = ({ cartCount }) => {
                   onClick={() => setMenuOpen(false)}
                 >
                   Contact
-                </Link>
-              </li>
-              <li>
-                <Link
-                  className="hover:bg-orange-500"
-                  to="/cart"
-                  onClick={() => setMenuOpen(false)}
-                >
-                  <img src={cart} alt="cart logo" />
-                  <span className="absolute top-26 bg-red-700 text-white text-xs font-bold rounded-full px-2 py-0.5">
-                    {cartCount}
-                  </span>
                 </Link>
               </li>
               <li>

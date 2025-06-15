@@ -5,12 +5,12 @@ import { Link } from "react-router-dom";
 const Section1 = () => {
   return (
     <div className="backgroundImage bg-gray-200 flex items-center justify-left text-white flex-col md:flex-row">
-      <div className="absolute top-100 left-0 text-left p-8 w-[70%] rounded-lg flex flex-col items-start m-8 shadow-2xl md:w-[40%]">
+      <div className="absolute top-90 left-0 text-left p-8 w-[70%] rounded-lg flex flex-col items-start m-8 shadow-2xl md:w-[40%]">
         <p className="pt-4 font-croissant">New Arrival</p>
-        <h2 className="text-3xl font-extrabold text-orange-700 font-berkshire">
+        <h2 className="text-3xl font-extrabold text-amber-100 font-berkshire">
           Discover Our
         </h2>
-        <h2 className="text-3xl font-extrabold text-orange-700 font-berkshire">
+        <h2 className="text-3xl font-extrabold text-amber-100 font-berkshire">
           New Collection
         </h2>
         <Link
