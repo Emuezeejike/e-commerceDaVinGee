@@ -1,9 +1,11 @@
 import React, { lazy, Suspense } from "react";
 import Warranty from "../../Components/Warranty";
 
+
 const Section3 = lazy(() => import("./Section3"));
 const Caro = lazy(() => import("../../Components/Caro"));
 const CarouselComp = lazy(() => import("../../Components/CarouselComp"));
+const ReviewPage = lazy(() => import("../../Components/ReviewPage"));
 const Section2 = lazy(() => import("./Section2"));
 const Section1 = lazy(() => import("./Section1"));
 
@@ -25,6 +27,10 @@ const Home = ({ onAddToCart }) => {
       <Suspense fallback={<div>Loading...</div>}>
         <Section2 />
       </Suspense>
+      <Suspense fallback={<div>Loading...</div>}>
+        <ReviewPage />
+      </Suspense>
+      
       <Warranty />
     </div>
   );
