@@ -5,26 +5,26 @@ const ReviewPage = () => {
   const [reviews, setReviews] = useState([
     {
       id: 1,
-      name: "Yusuf Akande",
+      name: "Brian Tosin",
       rating: 5,
       comment:
-        "I was completely overwhelmed with the college application process, but Rich Wisdom Global Limited made everything clear and manageable. From helping me shortlist universities to refining my statement of purpose, their advice was spot-on. I got accepted into three of my top choices, and I could not have done it without them!",
+        "This is my third pair from [Your Brand Name], and every purchase has been worth it. Excellent customer service, fast shipping, and quality you can feel. Highly recommend!",
       date: "2025-06-18",
     },
     {
       id: 2,
-      name: "Olushegun Bukola",
+      name: "Olushegun Matthew",
       rating: 4,
       comment:
-        "As a parent, I wanted the best for my son but had no idea where to begin with international universities. The team walked us through the entire process—from course selection to visa assistance. Their professionalism and care gave us total peace of mind.",
+        "I’m always skeptical about buying shoes online, but these fit perfectly and exceeded my expectations. The sole is sturdy, and the insole is super cushioned. Amazing value for the price!",
       date: "2025-06-17",
     },
     {
       id: 3,
-      name: "Mark Nelson",
+      name: "Uzor Wisdom",
       rating: 5,
       comment:
-        "I was not only accepted into my dream university in the UK but also received a partial scholarship—thanks to the detailed guidance on my essay and application. I felt supported and valued throughout the process.",
+        "I’ve tried so many brands, but these sneakers from [Your Brand Name] are on another level. Super lightweight, breathable, and perfect for walking or casual wear. I wear them all day and my feet never feel tired!",
       date: "2025-06-17",
     },
   ]);
